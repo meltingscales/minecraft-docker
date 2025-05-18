@@ -7,14 +7,14 @@
         };
       };
       outputs = { self, nixpkgs, arion, ... }: {
-        nixosConfigurations.your-machine-name = nixpkgs.lib.nixosSystem {
+        nixosConfigurations."nixos-white-dragon" = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             arion.nixosModules.arion
             ({ config, pkgs, ... }: {
               virtualisation.docker.enable = true;
-              users.users.yourusername.extraGroups = [ "docker" ];
-              arion.projects."your-docker-compose-app".composeFile = /path/to/your/docker-compose.yml;
+              users.users."melty".extraGroups = [ "docker" ];
+              arion.projects."minecraft-beyond-mines-exosphere".composeFile = /home/melty/Git/minecraft-docker/beyond-mines-exosphere/docker-compose.yml;
             })
           ];
         };
