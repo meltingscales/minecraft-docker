@@ -7,7 +7,7 @@ echo "Group ID: $(id -g minecraft)"
 
 
 # Define source and target directories
-SOURCE_DIR="/minecraft-unzipped/BM_Exosphere_2.0.2_server" # we need to specify the subpath here because this specific modpack author placed the server files into a subdirectory of the zip
+SOURCE_DIR="/minecraft-unzipped" # we don't have a subpath here because this specific modpack author unzips the server files into the root of the zip
 TARGET_DIR="/minecraft"
 
 # Check if the target directory is empty

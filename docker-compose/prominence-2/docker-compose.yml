@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  minecraft-prominence-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    user: root # TODO fix this
+    container_name: minecraft-prominence-2
+    hostname: minecraft-prominence-2
+    ports:
+      - "25566:25565" # The parent needs to expose 25566
+    volumes:
+      - ./minecraft-data:/minecraft
+    environment:
+      - EULA=TRUE
+    restart: unless-stopped
