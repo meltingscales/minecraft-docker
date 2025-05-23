@@ -5,13 +5,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    user: root # TODO fix this
+    user: root
     container_name: minecraft-prominence-2
     hostname: minecraft-prominence-2
     ports:
       - "25566:25565" # The parent needs to expose 25566
     volumes:
-      - ./minecraft-data:/minecraft
+      - ./minecraft-data:/minecraft:rw
     environment:
       - EULA=TRUE
     restart: unless-stopped
